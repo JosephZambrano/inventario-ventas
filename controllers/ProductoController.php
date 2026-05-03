@@ -24,8 +24,8 @@ class ProductoController {
             return "Stock no puede ser negativo";
         }
 
-        if ($data['precio'] <= 0) {
-            return "Precio debe ser mayor a 0";
+        if (!is_numeric($data['precio']) || $data['precio'] <= 0) { 
+            return "Precio inválido";
         }
 
         $this->producto->nombre = $data['nombre'];

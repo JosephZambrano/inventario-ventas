@@ -10,7 +10,7 @@ $productos = $controller->listar();
 <form method="POST" action="productos.php">
     <input type="text" name="nombre" placeholder="Nombre">
     <input type="number" name="stock" placeholder="Stock">
-    <input type="number" name="precio" placeholder="Precio">
+    <input type="number" name="precio" step="0.01" min="0" placeholder="Precio">
     <button type="submit">Guardar</button>
 </form>
 
