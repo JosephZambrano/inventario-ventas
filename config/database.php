@@ -1,30 +1,26 @@
 <?php
 
-    class Database {
-        private $host = "localhost";
-        private $db_name = "inventario";
-        private $username = "root";
-        private $password = "";
-        public $conn;
+class Database {
+    private $host = "localhost";
+    private $db_name = "inventario";
+    private $username = "root";
+    private $password = "";
+    public $conn;
 
-        public function getConnection(){
-            $this->conn = null;
+    public function getConnection() {
+        try {
+            $this->conn = new PDO(
+                "mysql:host=localhost;dbname=inventario;charset=utf8",
+                $this->username,
+                $this->password
+            );
 
-            try {
-                $this->conn = new PDO(
-                    "mysql:host= " . $this->host . ";dbname" . $this->db_name,
-                    $this->username,
-                    $this->password
-                );
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                $this->conn->exec("set name utf8");
-
-            } catch(PDOException $exception){
-                echo "Error de conexion: " . $exception->getMessage();
-            }
-
-            return $this->conn;
+        } catch(PDOException $e) {
+            die("Error de conexión: " . $e->getMessage());
         }
-    }
 
-?>
+        return $this->conn;
+    }
+}
