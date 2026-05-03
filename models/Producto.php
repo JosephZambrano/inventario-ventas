@@ -42,4 +42,30 @@ class Producto {
         $stmt->bindParam(":id", $this->id);
         return $stmt->execute();
     }
+
+    // Obtener un producto por ID
+    public function obtenerPorId() {
+        $sql = "SELECT * FROM " . $this->table . " WHERE id = :id LIMIT 1";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(":id", $this->id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    // Actualizar producto
+    public function actualizar() {
+        $sql = "UPDATE " . $this->table . "
+                SET nombre = :nombre, stock = :stock, precio = :precio
+                WHERE id = :id";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindParam(":nombre", $this->nombre);
+        $stmt->bindParam(":stock", $this->stock);
+        $stmt->bindParam(":precio", $this->precio);
+        $stmt->bindParam(":id", $this->id);
+
+        return $stmt->execute();
+    }
 }
+

@@ -22,6 +22,7 @@ $productos = $controller->listar();
     <th>Nombre</th>
     <th>Stock</th>
     <th>Precio</th>
+    <th>Acciones</th>
 </tr>
 
 <?php while($row = $productos->fetch(PDO::FETCH_ASSOC)) { ?>
@@ -30,6 +31,11 @@ $productos = $controller->listar();
     <td><?= $row['nombre'] ?></td>
     <td><?= $row['stock'] ?></td>
     <td><?= $row['precio'] ?></td>
+    <td>
+    <a href="editar.php?id=<?= $row['id'] ?>">Editar</a>
+    |
+    <a href="eliminar.php?id=<?= $row['id'] ?>" onclick="return confirm('¿Eliminar producto?')">Eliminar</a>
+    </td>
 </tr>
 <?php } ?>
 
