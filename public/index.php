@@ -4,6 +4,16 @@ require_once "../controllers/ProductoController.php";
 $controller = new ProductoController();
 $productos = $controller->listar();
 ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href="styles/style.css">
+    <title>Inicio</title>
+</head>
+<body>
+    
 
 <h1>Inventario de Productos</h1>
 
@@ -12,8 +22,11 @@ $productos = $controller->listar();
     <input type="number" name="stock" placeholder="Stock">
     <input type="number" name="precio" step="0.01" min="0" placeholder="Precio">
     <button type="submit">Guardar</button>
+    
 </form>
-
+    <a href="ventas.php">
+        <button>Vender</button>
+    </a>
 <hr>
 
 <table border="1">
@@ -40,3 +53,6 @@ $productos = $controller->listar();
 <?php } ?>
 
 </table>
+
+</body>
+</html>

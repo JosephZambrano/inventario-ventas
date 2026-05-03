@@ -6,8 +6,19 @@ $controller = new ProductoController();
 $id = $_GET['id'];
 $producto = $controller->obtener($id);
 ?>
-
-<h2>Editar Producto</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href="styles/style.css">
+    <title>Editar Producto</title>
+</head>
+<body>
+    
+</body>
+</html>
+<h1>Editar Producto</h1>
 
 <form method="POST" action="actualizar.php">
     <input type="hidden" name="id" value="<?= $producto['id'] ?>">
@@ -18,3 +29,6 @@ $producto = $controller->obtener($id);
 
     <button type="submit">Actualizar</button>
 </form>
+    <a href="index.php">
+        <button>Volver</button>
+    </a>

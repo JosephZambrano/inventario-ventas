@@ -1,0 +1,80 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; 
+    margin: 0; 
+    padding: 20px; 
+}
+
+/* Título principal */
+h1 {
+    color: #ff8c42; 
+}
+
+/* Estilo del formulario */
+form {
+    background: white; 
+    padding: 15px; 
+    border-radius: 8px; 
+    margin-bottom: 20px; 
+}
+
+/* Inputs (cajas de texto) */
+input {
+    padding: 8px; 
+    margin: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+/* Botón */
+button {
+    background-color: #ff8c42; 
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+/* Efecto al pasar el mouse */
+button:hover {
+    background-color: #e6762f; 
+}
+
+/* Tabla */
+table {
+    width: 70%; 
+    border-collapse: collapse; 
+    background: white; 
+}
+
+/* Celdas */
+th, td {
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    text-align: center; 
+}
+
+/* Filas alternas */
+tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+
+a {
+    text-decoration: none; 
+    color: #ff8c42; 
+    font-weight: bold; 
+}
+
+a:hover {
+    color: #e6762f; 
+}
+
+select {
+    padding: 8px; 
+    margin: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    background-color: white;
+}
